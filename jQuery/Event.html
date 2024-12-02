@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <title>Document</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="./Event.js"></script>
+</head>
+<body class="container-fluid bg-secondary">
+    <div class="bg-light mt-3">
+        <div class="text-center">
+            <h3>Personal Loan EMI Calculator</h3>
+        </div>
+        <div class="p-3">
+            <div class="row">
+                <div class="col">
+                    <label>Amount you need &#8377 <input type="text" id="lblAmount"></label>
+                </div>
+                <div class="col">
+                    <label>for <input type="text" id="lblYear"><label>years</label></label>
+                </div>
+                <div class="col">
+                    <label>Interest rate <input type="text" id="lblInterest"><label>%</label></label>
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col">
+                    <input type="range" value="100000" min="100000" max="1000000" class="form-range" id="rangeAmount">
+                    <span>&#8377 1,00,000</span>
+                    <span class="float-end">&#8377 10,00,000</span>
+                </div>
+                <div class="col">
+                    <input type="range" value="1" min="1" max="5" class="form-range" id="rangeYear">
+                    <span>&#8377 1</span>
+                    <span class="float-end">&#8377 5</span>
+                </div>
+                <div class="col">
+                    <input type="range" value="10.45" min="10.45" max="18.45" class="form-range" id="rangeInterest" step="0.01">
+                    <span>&#8377 10.45%</span>
+                    <span class="float-end">&#8377 18.45%</span>
+                </div>
+            </div>
+            <div class="my-3 row">
+                <div class="text-end col">
+                    <button class="btn btn-primary" id="btnCalculate">Calculate</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p id="msgEmi"></p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
