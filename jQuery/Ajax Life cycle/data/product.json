@@ -1,0 +1,18 @@
+[
+    {
+        "Name":"Samsung TV",
+        "Price":45000.44
+    },
+    {
+        "Name":"Mobile Phone",
+        "Price":11500.00
+    },
+    {
+        "Name":"Smart Watch",
+        "Price":8599.50
+    },
+    {
+        "Name":"Ear Buds",
+        "Price":12499.10
+    }
+]
