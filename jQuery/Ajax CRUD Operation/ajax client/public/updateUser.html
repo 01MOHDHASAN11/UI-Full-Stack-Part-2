@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../node_modules//jquery/dist/jquery.js"></script>
+    <script>
+        $(function(){
+            $(".btnRegister").click(()=>{
+                LoadRegister("./register.html")
+            })
+            $(".btnUpdate").click(()=>{
+                // console.log("Update clicked")
+                const UpdatedUser=()=>{
+                    return{
+                        "email":$("#emailVal").val(),
+                        "name":$("#updateName").val()
+                    }
+                }
+                $.ajax({
+                        method:"PUT",
+                        url:"http://127.0.0.1:5000/auth/user-update",
+                        data:JSON.stringify(UpdatedUser()),
+                        contentType:"application/json",
+                        success:function(data){
+                            console.log("User updated successfully")
+                        },
+                        error:function(xhr,status,err){
+                            console.log(xhr.statusText,status,err)
+                        }
+                    })
+            })
+        })
+        function LoadRegister(registerLoad){
+            window.location.href=registerLoad
+        }
+    </script>
+</head>
+<body>
+    <h2>Edit UserName page</h2>
+    <dl>
+        <dt>Email:</dt>
+        <dd><input type="text" id="emailVal" placeholder="Enter your registered email"></dd>
+        <dt>UserName: </dt>
+        <dd><input type="text" id="updateName" placeholder="Enter updated name"></dd>
+    </dl>
+    <button class="btnUpdate">Update userName</button>
+    <button class="btnRegister">Continue with register page</button>
+</body>
+</html>

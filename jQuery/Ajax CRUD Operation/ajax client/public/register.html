@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function(){
+            $(".btnRegister").click(()=>{
+                const user=()=>{
+                    return{
+                        name:$("#username").val(),
+                        email:$("#email").val(),
+                        password:$("#password").val()
+                    }
+                }
+                $.ajax({
+                method:"POST",
+                url:"http://127.0.0.1:5000/auth/register",
+                data: JSON.stringify(user()),
+                contentType:"application/json",
+                success:function(data){
+                    alert("User registered successfully")
+                    console.log(data)
+                },
+                error:function(detail,status,err){
+                    console.log(detail.statusText)
+                }
+            })
+            })
+        })
+
+        $(function(){
+            $(".btnUpdate").click(()=>{
+                LoadUpdate("./updateUser.html")
+            })
+        })
+        function LoadUpdate(pageRoute){
+            window.location.href=pageRoute
+        }
+
+       
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>UserName</dt>
+        <dd><input type="text" id="username"></dd>
+        <dt>Email</dt>
+        <dd><input type="text" id="email"></dd>
+        <dt>Password</dt>
+        <dd><input type="password" id="password"></dd>
+    </dl>
+    <button class="btnRegister">User register</button>
+    <button class="btnUpdate">User update</button>
+</body>
+</html>
