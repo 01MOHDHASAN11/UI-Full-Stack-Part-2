@@ -1,6 +1,7 @@
 // import CustomEvent from "./CustomEvent";
 // import PreventDefault from "./PreventDefault";
 // import StopPropagation from "./StopPropagation";
+import AxiosLibrary from "./AxiosLibrary";
 import FetchMethod from "./FetchMethod";
 function App() {
   return (
@@ -8,7 +9,8 @@ function App() {
       {/* <CustomEvent/> */}
       {/* <PreventDefault/> */}
       {/* <StopPropagation/> */}
-      <FetchMethod/>
+      {/* <FetchMethod/> */}
+      <AxiosLibrary/>
     </div>
   );
 }
