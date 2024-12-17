@@ -1,0 +1,22 @@
+.login{
+    height:100vh;
+    width: 100vw;
+}
+.heading{
+    position: absolute;
+    top: 20%;
+    left:45%;
+}
+Form{
+    position: absolute;
+    top:25%;
+    left:35%;
+    right: 35%;
+    background-color: #FFFFFF;
+    margin-left: 40px;
+    margin-top: 50PX;
+    
+}
+.paddingBottom{
+    padding-bottom: 50px;
+}
